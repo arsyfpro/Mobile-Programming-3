@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AnotherActivity">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/another_activity"
+        android:textStyle="bold"
+        android:textSize="26sp"
+        android:textColor="#000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="24dp"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layout_first_name"
+        app:helperText="First Name"
+        android:layout_width="match_parent"
+        app:layout_constraintWidth_percent="0.7"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"
+        android:paddingHorizontal="15dp"
+        android:textColorHint="#808080"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        >
+
+        <TextView
+            android:id="@+id/et_first_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:gravity="center"
+            android:padding="10dp"
+            android:textColor="#000000"
+            android:textColorHint="#808080"
+            android:background="#00000000"
+            android:textSize="15sp"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layout_last_name"
+        app:helperText="Last Name"
+        android:layout_width="match_parent"
+        app:layout_constraintWidth_percent="0.7"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"
+        android:paddingHorizontal="15dp"
+        android:textColorHint="#808080"
+        app:layout_constraintTop_toBottomOf="@+id/layout_first_name"
+        >
+
+        <TextView
+            android:id="@+id/et_last_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:gravity="center"
+            android:padding="10dp"
+            android:textColor="#000000"
+            android:textColorHint="#808080"
+            android:background="#00000000"
+            android:textSize="15sp"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

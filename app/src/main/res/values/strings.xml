@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Mobile-Programming-3</string>
+    <string name="user_profile_info">User Profile Info</string>
+    <string name="image_profile">Image Profile</string>
+    <string name="another_activity">Another Activity</string>
+</resources>
