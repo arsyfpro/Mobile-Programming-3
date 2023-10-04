@@ -16,11 +16,23 @@ class AnotherActivity : AppCompatActivity() {
         val bundle: Bundle? = intent.extras
 
         if (bundle != null) {
-            val firstName = bundle.getString("extra_fname")
-            val lastName = bundle.getString("extra_lname")
+            if (intent.hasExtra("extra_name_parcel")) {
+                val userNameParcel: NameParcel? = intent.getParcelableExtra("extra_name_parcel")
 
-            binding.etFirstName.text = firstName
-            binding.etLastName.text = lastName
+                binding.etFirstName.text = userNameParcel?.firstName
+                binding.etLastName.text = userNameParcel?.lastName
+            } else if (intent.hasExtra("extra_name_serial")) {
+                val userNameSerial: NameSerial = intent.getSerializableExtra("extra_name_serial") as NameSerial
+
+                binding.etFirstName.text = userNameSerial.firstName
+                binding.etLastName.text = userNameSerial.lastName
+            } else {
+                val firstName = bundle.getString("extra_fname")
+                val lastName = bundle.getString("extra_lname")
+
+                binding.etFirstName.text = firstName
+                binding.etLastName.text = lastName
+            }
         }
 
     }

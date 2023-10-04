@@ -34,6 +34,31 @@ class MainActivity : AppCompatActivity() {
             startActivity(moveWithDataIntent)
         }
 
+        // Explicit intent to move to another activity with parcelable data
+        binding.moveActivityDataParcel.setOnClickListener {
+            val firstName = binding.etFirstName.text.toString()
+            val lastName = binding.etLastName.text.toString()
+
+            val uNameParcel = NameParcel(firstName, lastName)
+
+            val moveWithDataIntent = Intent(this@MainActivity, AnotherActivity::class.java)
+            moveWithDataIntent.putExtra("extra_name_parcel", uNameParcel)
+
+            startActivity(moveWithDataIntent)
+        }
+
+        binding.moveActivityDataSerial.setOnClickListener {
+            val firstName = binding.etFirstName.text.toString()
+            val lastName = binding.etLastName.text.toString()
+
+            val uNameSerial = NameSerial(firstName, lastName)
+
+            val moveWithDataIntent = Intent(this@MainActivity, AnotherActivity::class.java)
+            moveWithDataIntent.putExtra("extra_name_serial", uNameSerial)
+
+            startActivity(moveWithDataIntent)
+        }
+
         // Implicit content to call a phone number
         binding.callUser.setOnClickListener {
             val contactData = binding.etContactNumber.text
